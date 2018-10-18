@@ -11,9 +11,7 @@ def loginPageView(request):
             return JsonResponse({'err': 'AlreadyLoginAsAdmin', 'msg': '' })        
         
         if request.session['loginAs'] == 'Donor' or request.session['loginAs'] == 'Volunteer':
-            return JsonResponse({'err': 'AlreadyLoginAs' + request.session['loginAs'], 'msg': '' })    
-    except KeyError:
-        pass    
+            return JsonResponse({'err': 'AlreadyLoginAs' + request.session['loginAs'], 'msg': '' })        
     return JsonResponse({'err': '', 'msg': 'ableToLogin' })
     
     
