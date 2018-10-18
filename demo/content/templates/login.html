@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <style type="text/css">
+      .outer {
+        display: table;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+      .middle {
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .inner {
+        margin-left: auto;
+        margin-right: auto;
+        width: 500px;
+        text-align: center;
+        font-size: 16px;
+        /*whatevewidth you want*/
+      }
+
+      #shading {
+        border: 1px solid;
+        padding: 10px;
+        box-shadow: 5px 10px #888888;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="middle">
+        <div class="inner" id="shading">
+          <h1> Mind Hong Kong Login</h1>
+          <form action="/loginsubmit" method="post">
+            Username 
+            <input type="text" name="username" >
+            <br><br>
+            Password
+            <input type="password" name="password" >
+            <br><br><br>
+            <input type="submit" value="Submit"> 
+            <br><br>
+              
+          </form> 
+          <form action="/signup.html" method="post">
+              <input type="submit" value="Sign Up">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
