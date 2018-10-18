@@ -56,7 +56,7 @@ def loginSubmitPageView(request):
         return JsonResponse({'err': '', 'msg': 'loginAsAdmin'})
 
     request.session['loginAs'] = user.__class__.__name__    
-    return JsonResponse({'err': '', 'msg': 'loginAs' + user.__class__.__name__ })    
+    return render(request, 'admin_landing.html')    
 
 @csrf_exempt 
 def signupSubmitPageView(request):
@@ -84,13 +84,16 @@ def signupSubmitPageView(request):
     except User.MultipleObjectsReturned:
         return JsonResponse({'err': 'userAlreadyExist', 'msg': ''})
     except User.DoesNotExist:
-        User.objects.create(username=u, password=p, email=e, contact=c)
+        User.objects.create(username=uname, password=pword, email=em, contact=cont)
         return JsonResponse({'err': '', 'msg': 'userAdded'})
     
-    return JsonResponse({'err': 'userAlreadyExist', 'msg': ''})
+    return render(request, 'home.html')#JsonResponse({'err': 'userAlreadyExist', 'msg': ''})
 
 def homePageView(request):
     return render(request, 'home.html')
+    
+def aboutusPageView(request):
+    return render(request, 'about_us.html')
 
 def adminLandingPageView(request):
 	return HttpResponse('adminLandingPageView')
